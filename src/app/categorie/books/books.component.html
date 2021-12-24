@@ -1,0 +1,31 @@
+<div class="sec-padd"></div>
+<div class="container">
+    <div class="left-right-head">
+        <div class="d-flex">
+            <h4 class="">{{booksModel.categoryName || "All Summary"}}</h4>
+        </div>
+    </div>
+    <div class="book-box-out mb-3">
+        <div class="row">
+                <div *ngFor="let book of booksModel.Booklist" class="col-xl-3 col-md-6 col-sm-6" (click)="showFullBook(book.id)">
+                    <article>
+                        <figure><img [src]="book.img" alt="">
+                        </figure>
+                        <figcaption>
+                            <h4>{{book.title}}</h4>
+                            <p></p>
+                            <p>{{book.thought}}</p>
+                            <p></p>
+                            <span style="color:#20344B;">{{book.categoryName}} </span>
+                            <br>
+                            <span>{{book.author_name || "no data"}}</span>
+                        </figcaption>
+                    </article>
+                </div>
+            <div class="noData-div col-12 text-center  p-5" *ngIf="!booksModel.Booklist?.length">
+                <h2 class="p-0 m-0">No Books</h2>
+            </div>
+        </div>
+    </div>
+
+</div>

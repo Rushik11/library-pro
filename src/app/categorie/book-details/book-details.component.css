@@ -1,0 +1,108 @@
+.read_head_inner {
+    display: flex;
+}
+.read_head_section{
+    margin-bottom: 20px;
+    padding: 15px 0px;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 18%);
+}
+.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1;
+    text-align: center;
+}
+.book-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3f56;
+}
+.read_head_inner .right button {
+    margin-left: 20px;
+    outline: none;
+    display: inline-block;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    background: 0 0;
+    border: none;
+    border-radius: 5px;
+    outline: 0;
+    text-align: inherit;
+    line-height: 1;
+    font-weight: inherit;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.read_head_section .right img {
+    height: 25px;
+}
+
+
+.side-prev.prev, .side-next.next {
+    position: fixed;
+    top: 43vh;
+    transform: translate(0,-25%);
+    z-index: 1;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    height: 45vh;
+    width: 5vw;
+    cursor: pointer;
+    text-align: center;
+}
+.side-next.next {
+    right: 0px;
+}
+
+.book {
+    -webkit-flex: 1;
+    flex: 1;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    -webkit-justify-content: stretch;
+    justify-content: stretch;
+}
+.epub-view{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    flex: 0 0 auto;
+    visibility: visible;
+}
+.Heading {
+    padding: 30px 0px;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 1.917em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 11px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    orphans: 1;
+    page-break-after: auto;
+    page-break-before: auto;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    text-transform: none;
+    widows: 1;
+}
+.book-content{
+    text-align: justify;
+    font-size: 20px;
+}

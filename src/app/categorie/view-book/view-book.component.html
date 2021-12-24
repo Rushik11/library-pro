@@ -1,0 +1,61 @@
+<div class="detail_top_section"
+[style.background-image]="'url('+ bookById.bookList?.img +')'"
+>
+    <div class="container">
+        <div class="detail_image_box">
+            <img [src]="bookById.bookList?.img" alt="">
+        </div>
+        <div class="detail_des">
+            <h2>{{bookById.bookList?.title}}</h2>
+            <p>{{bookById.bookList?.auother_name || "no Data"}}</p>
+            <span>{{bookById.categoryId?.name}}</span>
+            <div class="book_btn_shell">
+                <a href="#" class="fav_btn"><i class="far fa-heart"></i></a>
+                <a href="#" class="send_kindle_btn">
+                    <img src="https://holyreads.com/webroot/front/img/kindle.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="read_listen_watch_button">
+            <ul>
+                <li>
+                    <a [routerLink]="['/bookDetails/'+bookById.bookList?._id]"><i class="fas fa-book icon"></i><span>Read</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-headphones icon"></i><span>Listen</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-play-circle icon"></i><span>Watch</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<section class="introduction_section">
+    <div class="container">
+        <h2>Introduction</h2>
+        <ul>
+            <li>
+                <h3>Overview</h3>
+                <p></p>
+                <p>{{bookById.bookList?.overview}}</p>
+                <p></p>
+            </li>
+            <li>
+                <h3>Who is this book for</h3>
+                <p></p>
+                <ul>
+                    <li>young men training to become fathers and husbands;</li>
+                    <li>fathers and husbands who feel that they have lost their way; and</li>
+                    <li>pastors looking for an explanation of biblical manhood.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>About the author</h3>
+                <p></p>
+                <p>{{bookById.bookList?.about_the_author}}</p>
+                <p></p>
+            </li>
+        </ul>
+    </div>
+</section>

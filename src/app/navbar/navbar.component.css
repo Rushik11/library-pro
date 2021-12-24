@@ -1,0 +1,25 @@
+.min-header{
+    background-color: #2aabe2;
+    position: sticky !important;
+    top: 0px !important;
+    z-index: 99;
+}
+.navbar{
+    padding: 10px 0px !important;
+
+}
+.nav-link{
+    padding: 12px 12px !important;
+    border-radius: 20%;
+    color: #fff;
+    transition: all 0.5s;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+
+
+.nav-link:hover{
+    background: #fe9925;
+    color: #fff;
+}

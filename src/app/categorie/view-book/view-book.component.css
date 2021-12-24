@@ -1,0 +1,167 @@
+section {
+  display: block;
+}
+.detail_top_section {
+  background-position: center;
+  background-size: cover;
+  min-height: calc(100vh - 119px);
+  overflow: hidden;
+  position: relative;
+}
+.detail_top_section:before {
+  content: "";
+  background: linear-gradient(rgb(255, 255, 255, 0.7), rgb(255, 255, 255, 0.7));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+.detail_top_section .container {
+  position: relative;
+  z-index: 1;
+}
+.detail_image_box {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.detail_des {
+  display: block;
+  text-align: center;
+  position: relative;
+}
+.detail_des h2 {
+  font-size: 26px;
+  color: #20344b;
+  margin: 0;
+  font-weight: 700;
+  padding: 0px 0px 30px 0px;
+}
+.detail_image_box img {
+  height: 400px;
+  object-fit: cover;
+  width: 275px;
+  border-radius: 5px;
+}
+.detail_des p {
+  font-size: 20px;
+  color: #828a95;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.book_btn_shell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.fav_btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    text-align: center;
+    padding: 8px 12px;
+    background: #fff;
+    color: #fe9925;
+    font-size: 27px;
+    display: block;
+    margin-bottom: 15px;
+}
+.send_kindle_btn {
+    display: inline-block;
+    width: 50px;
+}
+.send_kindle_btn img{
+    border-radius: 10px;
+}
+
+.read_listen_watch_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0px 20px;
+}
+.read_listen_watch_button ul {
+  display: flex;
+}
+.read_listen_watch_button ul li {
+  margin: 0 20px;
+}
+.read_listen_watch_button ul li a {
+  display: block;
+  background: #fe9925;
+  height: 50px;
+  line-height: 50px;
+  min-width: 150px;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #fff;
+  padding: 0px 5px;
+  text-transform: capitalize;
+  -webkit-box-shadow: 0px 4px 2px 0px rgb(0 0 0 / 33%);
+  -moz-box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.33);
+  box-shadow: 0px 4px 2px 0px rgb(0 0 0 / 33%);
+}
+.icon {
+  margin-right: 10px !important;
+}
+
+/* ========================== introduction-section================================= */
+
+.introduction_section {
+    padding: 40px 0px;
+}
+.introduction_section h2 {
+    width: 100%;
+    max-width: 684px;
+    margin: 0 auto;
+    font-size: 30px;
+    color: #20344b;
+    padding-bottom: 20px;
+}
+.introduction_section ul, .introduction_section h2 {
+    width: 100%;
+    max-width: 684px;
+    margin: 0 auto;
+}
+.introduction_section ul li {
+    display: block;
+    margin-bottom: 25px;
+    color: #828a95;
+}
+.introduction_section ul li h3 {
+  font-size: 21px;
+  color: #20344b;
+  margin: 0 0 15px 0px;
+  padding: 0;
+  background: url("https://holyreads.com/webroot/front/img/head_sap.png") no-repeat left center;
+  line-height: normal;
+  padding-left: 10px;
+}
+.introduction_section ul li p {
+    color: #828a95;
+    font-size: 14px;
+}
+.introduction_section > .container > ul > li > ul {
+    list-style: disc !important;
+    margin-left: 15px;
+}
+.introduction_section ul, .introduction_section h2 {
+    width: 100%;
+    max-width: 684px;
+    margin: 0 auto;
+}
+
+element.style {
+}
+.introduction_section > .container > ul > li > ul > li {
+    display: list-item;
+}

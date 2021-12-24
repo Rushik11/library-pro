@@ -1,0 +1,33 @@
+<div class="bar read_head_section">
+    <div class="container">
+        <div class="read_head_inner">
+            <div class="left"></div>
+            <div class="title text-left">
+                <span class="book-title">The Resolution for Men</span>
+            </div>
+            <div class="right">
+                <button>
+                    <img src="	https://holyreads.com/front/img/text_icon.png" alt="">
+                </button>
+                <button>
+                    <img src="	https://holyreads.com/front/img/index_list_icon.png" alt="">
+                </button>
+                <button>
+                    <img src="	https://holyreads.com/front/img/play.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="side-prev prev" (click)="priviesPage()">
+    <i class="fas fa-chevron-left"></i>
+</button>
+<div class="book container" *ngFor="let book of allBookList.detail">
+    <div class="epub-view ">
+        <p class="Heading">{{book.heading}}</p>
+        <p class="book-content">{{book.description}}</p>
+    </div>
+</div>
+<button class="side-next next" (click)="nextPage()">
+    <i class="fas fa-chevron-right"></i>
+</button>
