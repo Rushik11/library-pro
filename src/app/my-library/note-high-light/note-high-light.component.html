@@ -1,0 +1,22 @@
+<div class="mynotes container mt-5">
+  <ul>
+    <li *ngFor="let book of getHighLightBookList.highLight">
+      <div (click)="getFullHighLight(book.bookId)">
+          <article class="d-flex align-items-center">
+              <figure>
+                  <img [src]="book.bookImg" alt="">
+              </figure>
+              <figcaption>
+                <div class="book-info-li">
+                    <span class="tit-book">{{book.bookTitle}}</span>
+                    <span class="book-author">{{book.bookAuthor || 'no data'}}</span>
+                </div>
+                <p></p>
+                <p>{{book.bookThought}}</p>
+                <p></p>
+              </figcaption>
+          </article>
+      </div>
+    </li>
+  </ul>
+</div>

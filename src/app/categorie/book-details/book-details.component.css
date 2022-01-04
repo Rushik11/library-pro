@@ -1,108 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap');
 .read_head_inner {
-    display: flex;
+  display: flex;
 }
-.read_head_section{
-    margin-bottom: 20px;
-    padding: 15px 0px;
-    z-index: 2;
-    background: #fff;
-    box-shadow: 0 1px 10px rgb(0 0 0 / 18%);
+.read_head_section {
+  margin-bottom: 0px;
+  padding: 15px 0px;
+  z-index: 2;
+  background: #fff;
+  box-shadow: 0 1px 10px rgb(0 0 0 / 18%);
 }
 .title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0;
-    flex: 1;
-    text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
+  text-align: center;
 }
-.book-title{
-    font-size: 20px;
-    font-weight: 600;
-    color: #2d3f56;
+.book-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d3f56;
 }
 .read_head_inner .right button {
-    margin-left: 20px;
-    outline: none;
-    display: inline-block;
-    font-size: inherit;
-    color: inherit;
-    cursor: pointer;
-    background: 0 0;
-    border: none;
-    border-radius: 5px;
-    outline: 0;
-    text-align: inherit;
-    line-height: 1;
-    font-weight: inherit;
-    text-decoration: none;
-    vertical-align: middle;
+  margin-left: 20px;
+  outline: none;
+  display: inline-block;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: 0 0;
+  border: none;
+  border-radius: 5px;
+  outline: 0;
+  text-align: inherit;
+  line-height: 1;
+  font-weight: inherit;
+  text-decoration: none;
+  vertical-align: middle;
 }
 .read_head_section .right img {
-    height: 25px;
+  height: 25px;
 }
 
-
-.side-prev.prev, .side-next.next {
-    position: fixed;
-    top: 43vh;
-    transform: translate(0,-25%);
-    z-index: 1;
-    font-size: 25px;
-    border: none;
-    outline: none;
-    height: 45vh;
-    width: 5vw;
-    cursor: pointer;
-    text-align: center;
+.side-prev.prev,
+.side-next.next {
+  position: fixed;
+  top: 43vh;
+  transform: translate(0, -25%);
+  z-index: 1;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  height: 45vh;
+  width: 5vw;
+  cursor: pointer;
+  text-align: center;
 }
 .side-next.next {
-    right: 0px;
+  right: 0px;
 }
-
+::ng-deep.highlight {
+  background-color: yellow !important;
+  margin: 0px;
+  padding: 0px;
+  /* height: 100%;
+  width: 100%; */
+}
 .book {
-    -webkit-flex: 1;
-    flex: 1;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    -webkit-justify-content: stretch;
-    justify-content: stretch;
+  -webkit-flex: 1;
+  flex: 1;
+  min-height: calc(100vh - 143px);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-justify-content: stretch;
+  justify-content: stretch;
 }
-.epub-view{
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    display: block;
-    flex: 0 0 auto;
-    visibility: visible;
+.epub-view {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  visibility: visible;
 }
 .Heading {
-    padding: 30px 0px;
-    color: #000000;
-    font-family: Arial, sans-serif;
-    font-size: 1.917em;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: 11px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    orphans: 1;
-    page-break-after: auto;
-    page-break-before: auto;
-    text-align: left;
-    text-decoration: none;
-    text-indent: 0;
-    text-transform: none;
-    widows: 1;
+  padding: 30px 0px;
+
+  font-family: Arial, sans-serif;
+  font-size: 1.917em;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 11px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  orphans: 1;
+  page-break-after: auto;
+  page-break-before: auto;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-transform: none;
+  widows: 1;
 }
-.book-content{
-    text-align: justify;
-    font-size: 20px;
+.book-content {
+  text-align: justify;
+  font-size: 20px;
 }
+#content-hidden{
+  display: none;
+}
+.save-menu {
+  /* color: black; */
+  width: auto;
+  /* display: none; */
+  z-index: 9999;
+  position: fixed;
+  /* top: 0; */
+  left: 40%;
+  bottom: 20px;
+  /* right: 0px; */
+  border: none !important;
+}
+
+.save-menu .save-menu-options {
+  list-style: none;
+  display: flex;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  border: none;
+}
+.save-menu .save-menu-options .save-menu-option:first-child{
+    border-left: none;
+    border-radius: 7px 0px 0px 7px;
+}
+.note-icon{
+    line-height: 40px;
+    margin-right: 10px;
+    height: 100%;
+}
+.save-menu .save-menu-options .save-menu-option, .delete-menu .delete-menu-options .delete-menu-option {
+    /* font-weight: 500; */
+    font-size: 17px;
+    cursor: pointer;
+    min-width: 150px;
+    height: 40px;
+    border-right: 1px solid white;
+    /* border-radius: 50%; */
+    display: flex;
+    text-align: center;
+    /* margin-left: 30px; */
+    background-color: #4e4f51 !important;
+    padding: 0px 4px;
+    color: white;
+    line-height: 40px;
+}
+
+input[type=text]{
+  width:200px;
+  padding:8px 10px;
+}
+.complete-menu{
+  left: 0px;
+}
+
+li em {
+  background:#ff6;
+  font-weight:bold;
+  font-style:normal;
+}
+::ng-deep .selected {
+  color:red;
+ }
+
+ /* ====================================sideBar=============================== */
+ .sidebar-in{
+   min-height: 100vh;
+   z-index: 99;
+   position: fixed;
+   top: 0px;
+   right: -22%;
+   width: 22% !important;
+   padding: 20px 0px;
+   background-color: #fff;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+   transition: all 0.5s;
+ }
+ .showSidBar{
+  height: 100vh;
+  z-index: 99;
+  position: fixed;
+  top: 0px;
+  right: 0% !important;
+  width: 22% !important;
+  padding: 20px 0px;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: all 0.5s;
+ }
+ .theme{
+  display: block;
+  padding: 10px 14px;
+  border-bottom: 1px solid #ccc;
+ }
+ .setting-label{
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #20344b;
+  background: url("https://holyreads.com/webroot/front/img/head_sap.png") no-repeat left center;
+  line-height: normal;
+  padding-left: 10px;
+ }
+ .chips{
+   display: block;
+   padding: 10px 10px 10px 0px !important;
+ }
+ .chip {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 32px;
+  border: 1px solid #fff !important;
+  cursor: pointer;
+  text-align: center;
+  margin: 4px;
+  padding: 4px 8px;
+}
+.chip:hover{
+  border: 1px solid rgba(0, 0, 0, 0.623) !important;
+}
+.active{
+  border: 1px solid rgba(0, 0, 0, 0.623) !important;
+}
+.font{
+  font-size: 14px !important;
+  font-weight: 600;
+
+}
+ .main-div{
+   position: relative;
+ }
+ .black-div{
+   height: 100vh;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.377);
+   z-index: 98;
+   position: fixed;
+   top: 0px;
+   bottom: 0;
+   right: 0;
+   left: 0;
+ }
+ .black-div-2{
+  height: 100vh;
+  width: 100%;
+  /* z-index: -1; */
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+ }
+ .complete-btn{
+   /* display: block; */
+   padding: 30px;
+   border: 1px solid ;
+ }

@@ -1,0 +1,39 @@
+<div class="mynotes container mt-5">
+  <ul>
+    <li *ngFor="let highLight of fullHighLightList.highLight" (click)="getBookDetails()"> 
+      <div>
+        <article class="d-flex align-items-center">
+          <figure>
+            <img
+              [src]="highLight.bookImg"
+              alt=""
+            />
+          </figure>
+          <figcaption>
+            <div class="book-info-li">
+              <span class="tit-book">{{highLight.bookTitle}}</span>
+              <span class="book-author">{{highLight.bookAuthor}}</span>
+              <span class="book-highlights">
+               {{highLight.hedding}}
+              </span>
+              <div class="icons-control">
+                  <a href="#" class="btn">
+                      <i class="far fa-comment-dots"></i>
+                  </a>
+                  <a href="#" class="btn">
+                      <i class="fas fa-share"></i>
+                  </a>
+                  <a href="#" class="btn">
+                      <i class="far fa-trash-alt"></i>
+                  </a>
+              </div>
+            </div>
+            <p></p>
+            <p>{{highLight.highLights}}</p>
+            <p></p>
+          </figcaption>
+        </article>
+      </div>
+    </li>
+  </ul>
+</div>

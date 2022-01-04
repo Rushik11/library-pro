@@ -11,5 +11,6 @@ export class bookList {
   name?:string;
   about_the_author?:string;
   auother_name?:string;
+  favourite?:boolean
   bookList?: bookList ={} 
 }

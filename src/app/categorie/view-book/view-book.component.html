@@ -10,7 +10,8 @@
             <p>{{bookById.bookList?.auother_name || "no Data"}}</p>
             <span>{{bookById.categoryId?.name}}</span>
             <div class="book_btn_shell">
-                <a href="#" class="fav_btn"><i class="far fa-heart"></i></a>
+                <button href="" class="fav_btn" (click)="addToFavorite()" *ngIf="!bookById.bookList?.favourite"><i class="far fa-heart"></i></button>
+                <button href="" class="fav_btn fav-favorite" *ngIf="bookById.bookList?.favourite"><i class="far fa-heart"></i></button>
                 <a href="#" class="send_kindle_btn">
                     <img src="https://holyreads.com/webroot/front/img/kindle.jpg" alt="">
                 </a>

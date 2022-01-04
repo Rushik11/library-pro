@@ -9,7 +9,8 @@ export function getBookList(parameter :any) {
         title: parameter.title,
         thought: parameter.thought,
         overview: parameter.overview,
-        about_the_author: parameter.about_the_author
+        about_the_author: parameter.about_the_author,
+        
       }
     );
   }

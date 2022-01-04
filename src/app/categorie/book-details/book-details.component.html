@@ -1,33 +1,194 @@
-<div class="bar read_head_section">
+<div class="main-div">
+  <div class="bar read_head_section">
     <div class="container">
-        <div class="read_head_inner">
-            <div class="left"></div>
-            <div class="title text-left">
-                <span class="book-title">The Resolution for Men</span>
-            </div>
-            <div class="right">
-                <button>
-                    <img src="	https://holyreads.com/front/img/text_icon.png" alt="">
-                </button>
-                <button>
-                    <img src="	https://holyreads.com/front/img/index_list_icon.png" alt="">
-                </button>
-                <button>
-                    <img src="	https://holyreads.com/front/img/play.png" alt="">
-                </button>
-            </div>
+      <div class="read_head_inner">
+        <div class="left"></div>
+        <div class="title text-left">
+          <span class="book-title">{{ allBookList.detail?.bookHeading }}</span>
         </div>
+        <div class="right">
+          <button>
+            <img
+              src="	https://holyreads.com/front/img/text_icon.png"
+              alt=""
+              (click)="toggleMenu()"
+            />
+          </button>
+          <button>
+            <img
+              src="	https://holyreads.com/front/img/index_list_icon.png"
+              alt=""
+            />
+          </button>
+          <button>
+            <img src="	https://holyreads.com/front/img/play.png" alt="" />
+          </button>
+        </div>
+      </div>
     </div>
-</div>
-<button class="side-prev prev" (click)="priviesPage()">
+  </div>
+  <button
+    class="side-prev prev"
+    *ngIf="!isPriviesDisable"
+    (click)="priviesPage()"
+    [ngStyle]="{ color: fontStyle.fontColor}"
+  >
     <i class="fas fa-chevron-left"></i>
-</button>
-<div class="book container" *ngFor="let book of allBookList.detail">
-    <div class="epub-view ">
-        <p class="Heading">{{book.heading}}</p>
-        <p class="book-content">{{book.description}}</p>
+  </button>
+  <div [ngStyle]="{ 'background-color': fontStyle?.fontBgColor, 'color': fontStyle.fontColor}">
+    <div class="book container ">
+      <div class="epub-view">
+        <p class="Heading" [ngStyle]="{ 'font-size': fontStyle.fontSize}">
+          {{ allBookList.detail?.heading }}
+        </p>
+        <p
+          class="book-content"
+          id="content"
+          (mouseup)="getValue()"
+          [innerText]="allBookList.detail?.description"
+          [ngStyle]="{
+            'font-size': fontStyle.fontSize,
+            'font-family': fontStyle.fontFamily
+          }"
+        ></p>
+        <div class="save-menu" *ngIf="showHighsLightIcon" >
+          <ul class="save-menu-options">
+            <li class="save-menu-option">
+              <i class="fas fa-clipboard ml-3 note-icon"></i>
+              Note
+            </li>
+            <li class="save-menu-option" (click)="setHighLight()">
+              <i class="fas fa-pencil-alt note-icon" ></i>
+              HighLight
+            </li>
+          </ul>
+        </div>
+        <div class=" text-center p-5" *ngIf="showNoteIcon">
+          <button class="btn btn-primary" *ngIf="!isComplete.complete?.completed" (click)="postBookToComplete()"><i class="fas fa-pen"></i> Mark To Complete</button>
+          <button class="btn btn-success" *ngIf="isComplete.complete?.completed"><i class="fas fa-check"></i>Complete</button>
+        </div>
+      </div>
     </div>
-</div>
-<button class="side-next next" (click)="nextPage()">
+  </div>
+  <button
+    class="side-next next"
+    *ngIf="!isNextDisable"
+    (click)="nextPage()"
+    [ngStyle]="{ color: fontStyle.fontColor}"
+  >
     <i class="fas fa-chevron-right"></i>
-</button>
+  </button>
+  <div class="" [ngClass]="showMenu ? 'showSidBar' : 'sidebar-in'">
+    <div class="theme">
+      <div class="setting-label">Themes</div>
+      <div class="setting-content chips">
+        <div class="chip active" (click)="getColour('#ffff', 'black')">A</div>
+        <div
+          class="chip active"
+          style="background-color: black; color: #fff"
+          (click)="getColour('black', 'white')"
+        >
+          A
+        </div>
+        <div
+          class="chip active"
+          style="background: #f5deb3; color: #000"
+          (click)="getColour('#f5deb3', '#000')"
+        >
+          A
+        </div>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="setting-label">Font Size</div>
+      <div class="setting-content chips">
+        <div
+          class="chip"
+          [ngClass]="fontStyle.fontSize === '14px' ? 'active' : ''"
+          style="font-size: 14px"
+          (click)="getFontSize('14px')"
+        >
+          Aa
+        </div>
+        <div
+          class="chip"
+          [ngClass]="fontStyle.fontSize === '17px' ? 'active' : ''"
+          style="font-size: 17px"
+          (click)="getFontSize('17px')"
+        >
+          Aa
+        </div>
+        <div
+          class="chip"
+          [ngClass]="fontStyle.fontSize === '21px' ? 'active' : ''"
+          style="font-size: 21px"
+          (click)="getFontSize('21px')"
+        >
+          Aa
+        </div>
+        <div
+          class="chip"
+          [ngClass]="fontStyle.fontSize === '26px' ? 'active' : ''"
+          style="font-size: 26px"
+          (click)="getFontSize('26px')"
+        >
+          Aa
+        </div>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="setting-label">Font</div>
+      <div class="setting-content chips">
+        <div
+          class="font chip"
+          style="font-family: Roboto, sans-serif"
+          (click)="getFontFamily('Roboto')"
+          [ngClass]="fontStyle.fontFamily === 'Roboto' ? 'active' : ''"
+        >
+          Roboto
+        </div>
+        <div
+          class="font chip"
+          style="font-family: Lato, sans-serif"
+          (click)="getFontFamily('Lato')"
+          [ngClass]="fontStyle.fontFamily === 'Lato' ? 'active' : ''"
+        >
+          Lato
+        </div>
+        <div
+          class="font chip"
+          style="font-family: Georama, sans-serif"
+          (click)="getFontFamily('Georama')"
+          [ngClass]="fontStyle.fontFamily === 'Georama' ? 'active' : ''"
+        >
+          Georgia
+        </div>
+        <div
+          class="font chip"
+          style="font-family: Tinos, serif; font-weight: 400 !important"
+          (click)="getFontFamily('Tinos')"
+          [ngClass]="fontStyle.fontFamily === 'Tinos' ? 'active' : ''"
+        >
+          TimesNew Roman
+        </div>
+        <div
+          class="font chip"
+          style="
+            font-family: 'Arbutus Slab', serif;
+            font-weight: 400 !important;
+          "
+          (click)="getFontFamily('Arbutus Slab')"
+          [ngClass]="fontStyle.fontFamily === 'Arbutus Slab' ? 'active' : ''"
+        >
+          Arbutus Slab
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="black-div"
+    [ngStyle]="{ display: showMenu ? 'block' : 'none' }"
+    (click)="showMenu = false"
+  ></div>
+  <div class="black-div-2" (click)="disableItems()"></div>
+</div>

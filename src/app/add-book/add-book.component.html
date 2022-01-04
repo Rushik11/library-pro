@@ -1,0 +1,48 @@
+<div class="container was-validated">
+    <form class="p-5" [formGroup]="addBook" (ngSubmit)="addBookDetails()">
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="formGroupExampleInput">img</label>
+                <input type="text" class="form-control" formControlName="img" id="formGroupExampleInput"
+                    placeholder="img url"/>
+                    <div class="invalid-feedback">{{setError}}</div>
+            </div>
+            <div class="form-group col-6">
+                <label for="formGroupExampleInput2">title</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" formControlName="title"
+                    placeholder="title">
+                    <div class="invalid-feedback">{{setError}}</div>
+
+            </div>
+            <div class="form-group col-6">
+                <label for="formGroupExampleInput3">author-name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" formControlName="auother_name"
+                    placeholder="author-name">
+                    <div class="invalid-feedback">{{setError}}</div>
+
+            </div>
+            <div class="form-group col-6">
+                <label for="formGroupExampleInput4">category</label>
+                <select class="form-control" id="formGroupExampleInput4" formControlName="categoryId">
+                    <option *ngFor="let list of categoricList.categorylist" value={{list.id}}>{{list.name}}</option>
+                </select>
+            </div>
+            <div class="form-group col-6">
+                <label for="formGroupExampleInput3">thought</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" formControlName="thought"
+                    placeholder="thought">
+            </div>
+            <div class="form-group col-6">
+                <label for="formGroupExampleInput5">overview</label>
+                <textarea rows="5" class="form-control" id="formGroupExampleInput5" placeholder="overview..."
+                    formControlName="overview"></textarea>
+            </div>
+            <div class="form-group col-6">
+                <label for="formGroupExampleInput6">about-the-author</label>
+                <textarea rows="5" class="form-control" id="formGroupExampleInput6" placeholder="about-the-author..."
+                    formControlName="about_the_author"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">AddBook</button>
+    </form>
+</div>

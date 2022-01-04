@@ -73,6 +73,12 @@ section {
     font-size: 27px;
     display: block;
     margin-bottom: 15px;
+    outline: none !important;
+    border: none !important;
+}
+.fav-favorite{
+  background-color:#fe9925 !important ;
+  color: #fff;
 }
 .send_kindle_btn {
     display: inline-block;
